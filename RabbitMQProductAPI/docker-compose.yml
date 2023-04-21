@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.11.2-management-alpine
+
+  rabbitmqproductapi:
+    image: ${DOCKER_REGISTRY-}rabbitmqproductapi
+    build:
+      context: .
+      dockerfile: Dockerfile
